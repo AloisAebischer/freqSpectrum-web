@@ -1,0 +1,39 @@
+<!-- PANEL -->
+<div class="panel">
+        <input style="display:none;" id="fileDialog" type="file"/>
+        <div class="messageOk" id="messageOk" style="position:absolute; top:14%; right:3%;">Data saved in ./dataBase</div>
+        <div class="messageError" id="messageError" style="position:absolute; top:14%; right:3%;">Enter file name</div>
+        <form style="position:absolute; height: 100%; width: 100%; bottom:0; left:0;">
+            <br>
+            <fieldset>
+                <legend>Commands</legend>
+                <div class="commands">
+                    <table>
+                        <col width="50%"/>
+                        <col width="50%"/>
+                        <tr>
+                            <td>
+                                <div class="btn" ng-click="showTheFile()">Open</div>
+                            </td>
+                            <td>
+                                <div class="btn" ng-click="saveData()">Save</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                               Name: <input type="text" id="file-name" style="width:45%;">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </fieldset>
+            <fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>Results</legend>
+                </div>
+            </fieldset>
+        </form>
+</div>

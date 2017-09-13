@@ -1,0 +1,102 @@
+@import "mixins";
+// Cadran map panel
+.panel {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 35%;
+    background-size: 100% 100%;
+        legend{
+            @include fontUse($fontFamilly, 180%, $fontWeight);
+            margin:auto
+        }
+        fieldset{
+            color: white;
+            margin:1%;
+            @include fontUse($fontFamilly, 58%, $fontWeight);
+        }
+        input{
+            @include fontUse($fontFamilly, 100%, $fontWeight);
+        }
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"]{
+            text-align: right;
+        }
+    .commands{
+        table
+        {
+            border-collapse: collapse;
+            color: white;
+            width: 100%;
+            @include fontUse($fontFamilly, 130%, $fontWeight);
+            margin: 2% 0px;
+
+        }
+        td, th
+        {
+            padding:1%;
+            text-align: center;
+        }
+        
+    }
+    .btn{
+            text-align: center; 
+            background-size: 70%;
+            padding: 4% 6%;
+            margin: auto; 
+            width: 70%;
+            background-color: none;
+            cursor: pointer;
+            border: 3px solid white;
+            @include border(8px);
+            &.green{
+                background-color: green;
+            }
+            &.yellow{
+                background-color: gold;
+            }
+            &.red{
+                background-color: red;
+            }
+            &.blue{
+                background-color: DodgerBlue;
+            }
+        }
+    .results{
+        table
+        {
+            border-collapse: collapse;
+            color: white;
+            @include fontUse($fontFamilly, 130%, $fontWeight);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        tr{
+            @include fontUse($fontFamilly, 90%, $fontWeight);
+        }
+        td, th
+        {
+            border: 1px solid white;
+            text-align: center;
+            padding: 1.5%;
+        }
+    }
+    .messageOk {
+        color: #4F8A10;
+        background-color: #DFF2BF;
+        padding:1px 6px;
+        opacity: 0;
+        transition: opacity 0.5s linear;
+    }
+    .messageError {
+        color: #D8000C;
+        background-color: #FFBABA;
+        padding:1px 6px;
+        opacity: 0;
+        transition: opacity 0.5s linear;
+    }
+    }
