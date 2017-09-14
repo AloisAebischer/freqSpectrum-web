@@ -10,6 +10,7 @@
             templateUrl: 'js/directives/panel/panel.html',
             controller: 'panelCtrl',
             controllerAs: 'vm',
+            scope:{frequencyData: '=', waveData: '=', update:'='},
         } 
     }
 }());
