@@ -7,29 +7,33 @@
     function graphCtrl($scope) {
         var graphFrequency, graphWave, graphDataFreq=0, graphDataWave=0;
         $scope.updateGraph = function() {
-            graphDataFreq=[];
-            for(var i=0;i<$scope.frequencyData.length;i++){
-                var obj1 = { x: $scope.frequencyData[i][0], y: $scope.frequencyData[i][1]};
-                graphDataFreq.push(obj1);
+            if($scope.waveData.length > 0){
+                graphDataFreq=[];
+                for(var i=0;i<$scope.frequencyData.length;i++){
+                    var obj1 = { x: $scope.frequencyData[i][0], y: $scope.frequencyData[i][1]};
+                    graphDataFreq.push(obj1);
+                }
+                graphDataWave=[];
+                for(var i=0;i<$scope.waveData.length;i++){
+                    var obj1 = { x: $scope.waveData[i][0], y: $scope.waveData[i][1]};
+                    graphDataWave.push(obj1);
+                }
+                graphFrequency.data.datasets[0].data = graphDataFreq;
+                graphFrequency.options.scales.xAxes[0].ticks.max = Math.round($scope.frequencyData[$scope.frequencyData.length - 1][0]/1000)*1000;
+                graphFrequency.update();
+                graphWave.data.datasets[0].data = graphDataWave;
+                graphWave.options.scales.xAxes[0].ticks.max = Math.round(($scope.waveData[$scope.waveData.length - 1][0])/10)*10;
+                graphWave.update();
             }
-            graphDataWave=[];
-            for(var i=0;i<$scope.waveData.length;i++){
-                var obj1 = { x: $scope.waveData[i][0], y: $scope.waveData[i][1]};
-                graphDataWave.push(obj1);
-            }
-            graphFrequency.data.datasets[0].data = graphDataFreq;
-            graphFrequency.update();
-            graphWave.data.datasets[0].data = graphDataWave;
-            graphWave.update();
         }
         function drawFrequencyGraph() {
             var context = document.getElementById("chartFreq");
             var graphData = {
                 datasets: [{
-                    borderColor: 'red',
+                    borderColor: 'lime',
                     pointBackgroundColor: 'white',
-                    borderWidth: 2,
-                    pointRadius: 2,
+                    borderWidth: 0,
+                    pointRadius: 0,
                     data: graphDataFreq
                 }]
             }
@@ -63,7 +67,7 @@
                             },
                             ticks: {
                                 min: 0,
-                                max: 20000,
+                                max: 5000,
                                 fontColor: "white"
                             },
                             gridLines: {
@@ -81,7 +85,9 @@
                                 labelString: '[dB]',
                             },
                             ticks: {
-                                fontColor: "white"
+                                fontColor: "white",
+                                min: 0,
+                                max: 250,
                             },
                             gridLines: {
                                 display: true,
@@ -99,8 +105,8 @@
                 datasets: [{
                     borderColor: "red",
                     pointBackgroundColor: 'white',
-                    borderWidth: 2,
-                    pointRadius: 2,
+                    borderWidth: 0,
+                    pointRadius: 0,
                     data: graphDataWave,
                 }]
             };
@@ -134,7 +140,7 @@
                             },
                             ticks: {
                                 min: 0,
-                                max: 100,
+                                max: 30,
                                 fontColor: "white"
                             },
                             gridLines: {
@@ -153,8 +159,8 @@
                             },
                             ticks: {
                                 display: true,
-                                min: 0,
-                                max: 10,
+                                min: -1000,
+                                max: 1000,
                                 fontColor: "white"
                             },
                             gridLines: {

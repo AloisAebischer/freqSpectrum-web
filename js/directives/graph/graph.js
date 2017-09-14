@@ -10,8 +10,11 @@
             templateUrl: 'js/directives/graph/graph.html',
             controller: 'graphCtrl',
             controllerAs: 'vm',
-            scope:{frequencyData: '=', waveData: '='},
+            scope:{frequencyData: '=', waveData: '=', update:'='},
             link: function(scope, element, attr) {
+                scope.$watch('update', function () {
+                    scope.updateGraph();
+                }); 
             }
         } 
     }
