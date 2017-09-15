@@ -24,6 +24,17 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.panel ul {
+  font-family: 'Arial';
+  font-size: 180%;
+  font-weight: 100;
+  margin: 0;
+    /* Remove list bullets */
+  padding: 0;
+  list-style: none;
+  -webkit-font-smoothing: antialiased;
+}
+
 .panel input {
   font-family: 'Arial';
   font-size: 100%;
@@ -112,104 +123,6 @@
   padding: 1.5%;
   text-align: center;
   border: 1px solid white;
-}
-
-.panel .graphics table {
-  font-family: 'Arial';
-  font-size: 130%;
-  font-weight: 100;
-  width: 100%;
-  margin: 2% 0;
-  border-collapse: collapse;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-}
-
-.panel .graphics td,
-.panel .graphics th {
-  padding: 1%;
-  text-align: center;
-}
-
-.panel .container {
-  position: relative;
-  width: 95%;
-  height: 19%;
-  perspective: 1000px;
-}
-
-.panel #cube {
-  position: absolute;
-  top: 21%;
-  left: 39%;
-  width: 20%;
-  height: 60%;
-  margin: 0;
-  transform-style: preserve-3d;
-}
-
-.panel #cube figure {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border: 2px solid white;
-}
-
-.panel #cube .one {
-  transform: rotateX(90deg) translateZ(43px);
-}
-
-.panel #cube .two {
-  transform: translateZ(43px);
-}
-
-.panel #cube .three {
-  transform: rotateY(-90deg) translateZ(43px);
-}
-
-.panel #cube .four {
-  transform: rotateY(180deg) translateZ(43px);
-}
-
-.panel #cube .five {
-  transform: rotateY(90deg) translateZ(43px);
-}
-
-.panel #cube .six {
-  transform: rotateX(-90deg) translateZ(43px) rotate(180deg);
-}
-
-.panel .wheel {
-  position: absolute;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  height: 90%;
-  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
-  -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
-  -ms-transform: translateX(-50%) translateY(-50%) translateZ(0);
-  -o-transform: translateX(-50%) translateY(-50%) translateZ(0);
-  transform: translateX(-50%) translateY(-50%) translateZ(0);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-
-.panel .wheel.red {
-  background-color: red;
-}
-
-.panel .wheel.green {
-  background-color: green;
-}
-
-.panel .wheel.blue {
-  background-color: DodgerBlue;
 }
 
 .panel .messageOk {

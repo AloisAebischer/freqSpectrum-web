@@ -16,6 +16,12 @@
             margin:1%;
             @include fontUse($fontFamilly, 58%, $fontWeight);
         }
+        ul{
+            @include fontUse($fontFamilly, 180%, $fontWeight);
+            list-style: none; /* Remove list bullets */
+            padding: 0;
+            margin: 0;
+        }
         input{
             @include fontUse($fontFamilly, 100%, $fontWeight);
         }

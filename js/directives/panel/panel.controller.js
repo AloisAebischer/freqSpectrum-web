@@ -88,6 +88,28 @@
         $scope.showTheFile = function () {
             chooser.click()
         }
+        //Compute peaks
+        $scope.computePeaks = function () {
+            var derivate0=0, derivate1=0;
+            //Remove previous frequency list
+            var ul = document.getElementById("list-freq");
+            var lis = ul.getElementsByTagName("li")
+            while(lis.length > 0) {
+                ul.removeChild(lis[0]);
+            }
+            //Compute derivate to find peaks
+            for(var i=0; i<$scope.frequencyData.length-1; i++){
+                derivate1 = (parseInt($scope.frequencyData[i+1][1]) - parseInt($scope.frequencyData[i][1]))/(parseFloat($scope.frequencyData[i+1][0]) - parseFloat($scope.frequencyData[i][0]))*1000;
+                if(i>0){
+                    if(derivate1 <= 0 && derivate0 >= 0 && (parseInt($scope.frequencyData[i+1][1]) + parseInt($scope.frequencyData[i][1]))/2 > 15){
+                        var li = document.createElement("li");
+                        li.appendChild(document.createTextNode((parseInt($scope.frequencyData[i+1][0]) + parseInt($scope.frequencyData[i][0]))/2 + "Hz"));
+                        ul.appendChild(li);
+                    }
+                }
+                derivate0=derivate1;
+            }
+        }
     }
 
 

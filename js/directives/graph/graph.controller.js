@@ -82,7 +82,7 @@
                                 display: true,
                                 fontColor: "white",
                                 fontSize: 20,
-                                labelString: '[dB]',
+                                labelString: 'Amplitude',
                             },
                             ticks: {
                                 fontColor: "white",
@@ -155,12 +155,13 @@
                                 display: true,
                                 fontColor: "white",
                                 fontSize: 20,
-                                labelString: 'Pressure',
+                                labelString: 'ADC',
                             },
                             ticks: {
                                 display: true,
                                 min: -1000,
                                 max: 1000,
+                                stepSize: 500,
                                 fontColor: "white"
                             },
                             gridLines: {

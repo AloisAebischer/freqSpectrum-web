@@ -9,17 +9,23 @@
                 <legend>Commands</legend>
                 <div class="commands">
                     <table>
-                        <col width="50%"/>
-                        <col width="50%"/>
+                        <col width="33%"/>
+                        <col width="33%"/>
+                        <col width="33%"/>
                         <tr>
                             <td>
                                 <div class="btn" ng-click="showTheFile()">Open</div>
+                            </td>
+                            <td>
+                                <div class="btn">Measure</div>
                             </td>
                             <td>
                                 <div class="btn" ng-click="saveData()">Save</div>
                             </td>
                         </tr>
                         <tr>
+                            <td>
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -30,10 +36,9 @@
                 </div>
             </fieldset>
             <fieldset>
-            </fieldset>
-            <fieldset>
                 <legend>Results</legend>
-                </div>
+                <ul id="list-freq">Frequency Peaks:
+                </ul> 
             </fieldset>
         </form>
 </div>
