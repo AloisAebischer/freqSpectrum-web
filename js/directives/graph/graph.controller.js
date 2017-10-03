@@ -5,6 +5,8 @@
         .controller('graphCtrl', graphCtrl);
 
     function graphCtrl($scope) {
+        $scope.frequencyData=[];
+        $scope.waveData=[];
         var graphFrequency, graphWave, graphDataFreq=0, graphDataWave=0;
         $scope.updateGraph = function() {
             if($scope.waveData.length > 0){
@@ -67,7 +69,7 @@
                             },
                             ticks: {
                                 min: 0,
-                                max: 5000,
+                                max: 3000,
                                 fontColor: "white"
                             },
                             gridLines: {
@@ -140,7 +142,7 @@
                             },
                             ticks: {
                                 min: 0,
-                                max: 30,
+                                max: 3000,
                                 fontColor: "white"
                             },
                             gridLines: {

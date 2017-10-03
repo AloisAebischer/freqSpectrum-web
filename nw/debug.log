@@ -4515,3 +4515,15 @@
 [0216/153026:ERROR:process_reader_win.cc(141)] SuspendThread: Accès refusé. (0x5)
 [0216/153026:ERROR:exception_snapshot_win.cc(57)] thread ID 3068 not found in process
 [0216/153026:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[1003/123205:ERROR:scoped_process_suspend.cc(29)] NtSuspendProcess, ntstatus=-1073741558
+[1003/123205:ERROR:process_info.cc(103)] ReadProcessMemory bool __cdecl crashpad::`anonymous-namespace'::ReadStruct<struct crashpad::process_types::PEB<struct crashpad::process_types::internal::Traits64>>(void *,unsigned __int64,struct crashpad::process_types::PEB<struct crashpad::process_types::internal::Traits64> *): Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[1003/123205:ERROR:process_info.cc(542)] ReadProcessData failed
+[1003/123205:ERROR:process_info.cc(608)] range at 0x7fffffd6000, size 0x354 fully unreadable
+[1003/123205:ERROR:process_reader_win.cc(237)] ReadMemory at 0x7fffffd6000 of 852 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[1003/123205:ERROR:process_snapshot_win.cc(349)] ReadMemory PEB
+[1003/123205:ERROR:process_reader_win.cc(237)] ReadMemory at 0x779c2540 of 6656 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[1003/123205:ERROR:process_reader_win.cc(98)] process 9028 not found
+[1003/123205:ERROR:process_reader_win.cc(237)] ReadMemory at 0x13f61f6a0 of 12 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[1003/123205:WARNING:process_snapshot_win.cc(102)] ReadMemory ExceptionInformation failed
+[1003/123205:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[1003/123205:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558

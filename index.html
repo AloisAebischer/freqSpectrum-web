@@ -1,12 +1,18 @@
 <html ng-app="freq-spectrum">
 <head>
     <meta charset="utf-8">
-    <title>Minute Repeater NW</title>
-    <meta name="viewport" content="initial-scale=2, maximum-scale=2, user-scalable=no, width=device-width">
+    <title>Frequency Spectrum</title>
     <link href="css/main.css" rel="stylesheet">
-
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/chart.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/directives/graph/graph.controller.js"></script>
+    <script src="js/directives/graph/graph.js"></script>
+    <script src="js/directives/panel/panel.controller.js"></script>
+    <script src="js/directives/panel/panel.js"></script>
+    <script src="js/directives/interface/interface.controller.js"></script>
+    <script src="js/directives/interface/interface.js"></script>
 
     <script>
         if (typeof require != 'undefined') {
@@ -16,22 +22,11 @@
     </script>
 
 </head>
- 
+
 <body ng-controller="mainController as vm" style="background-color:black;">
-
-<!-- User interface -->
-<div style="display:block;overflow:hidden">
-    <interface data="interfaceData" style="overflow:hidden"></interface>
-</div>
-
-<script src="node_modules/angular/angular.js"></script>
-<script src="js/main.js"></script>
-<script src="js/directives/graph/graph.controller.js"></script>
-<script src="js/directives/graph/graph.js"></script>
-<script src="js/directives/panel/panel.controller.js"></script>
-<script src="js/directives/panel/panel.js"></script>
-<script src="js/directives/interface/interface.controller.js"></script>
-<script src="js/directives/interface/interface.js"></script>
-
+    <!-- User interface -->
+    <div style="display:block;overflow:hidden">
+        <interface data="interfaceData" style="overflow:hidden"></interface>
+    </div>
 </body>
 </html>
