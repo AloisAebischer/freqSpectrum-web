@@ -10,9 +10,9 @@
             templateUrl: 'js/directives/panel/panel.html',
             controller: 'panelCtrl',
             controllerAs: 'vm',
-            scope:{frequencyData: '=', waveData: '=', update:'=', measure:'='},
+            scope:{frequencyData: '=', waveData: '=', update:'=', samples:'=', freqSampling:'=', measure:'='},
             link: function(scope, element, attr) {
-                scope.$watch('update', function () {
+                scope.$watch('frequencyData', function () {
                     scope.computePeaks();
                 }); 
             }

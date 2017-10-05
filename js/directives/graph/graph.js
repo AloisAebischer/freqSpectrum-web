@@ -10,9 +10,9 @@
             templateUrl: 'js/directives/graph/graph.html',
             controller: 'graphCtrl',
             controllerAs: 'vm',
-            scope:{frequencyData: '=', waveData: '=', update:'='},
+            scope:{frequencyData: '=', waveData: '=', update:'=', samples:'=', freqSampling:'='},
             link: function(scope, element, attr) {
-                scope.$watch('update', function () {
+                scope.$watch('frequencyData', function () {
                     scope.updateGraph();
                 }); 
             }
