@@ -28,80 +28,6 @@
                 graphFrequency.update();
             }
         }
-        function drawFrequencyGraph() {
-            var context = document.getElementById("chartFreq");
-            var graphData = {
-                datasets: [{
-                    borderColor: 'lime',
-                    pointBackgroundColor: 'white',
-                    borderWidth: 0,
-                    pointRadius: 0,
-                    data: graphDataFreq
-                }]
-            }
-            graphFrequency = new Chart(context, {
-                type: 'line',
-                data: graphData,
-                options: {
-                    title:{
-                        display: true,
-                        fontSize: 20,
-                        fontColor: "white",
-                        text: "Frequency Spectrum"
-                    },
-                    animation : false,
-                    maintainAspectRatio: false,
-                    legend: {
-                        display: false,
-                    },
-                    tooltips: {
-                        enabled: false,
-                    },
-                    scales: {
-                        xAxes: [{
-                            type: 'linear',
-                            position: 'bottom',
-                            scaleLabel: {
-                                display: true,
-                                fontColor: "white",
-                                fontSize: 20,
-                                labelString: '[Hz]',
-                            },
-                            ticks: {
-                                min: 0,
-                                max: 20000,
-                                fontColor: "white"
-                            },
-                            gridLines: {
-                                display: true,
-                                color: "white",
-                            }
-                        }],
-                        yAxes: [{
-                            type: 'linear',
-                            position: 'left',
-                            scaleLabel: {
-                                display: true,
-                                fontColor: "white",
-                                fontSize: 20,
-                                labelString: 'Amplitude',
-                            },
-                            ticks: {
-                                fontColor: "white",
-                                min: 0,
-                                max: 500,
-                                stepSize: 100,
-                            },
-                            gridLines: {
-                                display: true,
-                                color: "white",
-                            }
-                        }]
-                    }
-                }
-            });
-        }
-        drawFrequencyGraph();
         function drawWaveGraph () {
             var context = document.getElementById("chartWave");
             var graphData = {
@@ -178,6 +104,80 @@
             });
         }
         drawWaveGraph();
+        function drawFrequencyGraph() {
+            var context = document.getElementById("chartFreq");
+            var graphData = {
+                datasets: [{
+                    borderColor: 'lime',
+                    pointBackgroundColor: 'white',
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    data: graphDataFreq
+                }]
+            }
+            graphFrequency = new Chart(context, {
+                type: 'line',
+                data: graphData,
+                options: {
+                    title:{
+                        display: true,
+                        fontSize: 20,
+                        fontColor: "white",
+                        text: "Frequency Spectrum"
+                    },
+                    animation : false,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        enabled: false,
+                    },
+                    scales: {
+                        xAxes: [{
+                            type: 'linear',
+                            position: 'bottom',
+                            scaleLabel: {
+                                display: true,
+                                fontColor: "white",
+                                fontSize: 20,
+                                labelString: '[Hz]',
+                            },
+                            ticks: {
+                                min: 0,
+                                max: 20000,
+                                fontColor: "white"
+                            },
+                            gridLines: {
+                                display: true,
+                                color: "white",
+                            }
+                        }],
+                        yAxes: [{
+                            type: 'linear',
+                            position: 'left',
+                            scaleLabel: {
+                                display: true,
+                                fontColor: "white",
+                                fontSize: 20,
+                                labelString: 'Amplitude',
+                            },
+                            ticks: {
+                                fontColor: "white",
+                                min: 0,
+                                max: 200,
+                                stepSize: 50,
+                            },
+                            gridLines: {
+                                display: true,
+                                color: "white",
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+        drawFrequencyGraph();
     }
 
 } ());

@@ -97,7 +97,7 @@
                 //Compute derivate to find peaks
                 for (var i = 0; i < $scope.frequencyData.length - 1; i++) {
                     derivate1 = $scope.frequencyData[i + 1] - $scope.frequencyData[i];
-                    if (derivate1 <= 0 && derivate0 >= 0 && ($scope.frequencyData[i + 1] + $scope.frequencyData[i]) / 2 > 50) {
+                    if (derivate1 <= 0 && derivate0 >= 0 && ($scope.frequencyData[i + 1] + $scope.frequencyData[i]) / 2 > 10) {
                         var li = document.createElement("li");
                         li.appendChild(document.createTextNode((((i+1)*$scope.freqSampling/$scope.samples + (i*$scope.freqSampling/$scope.samples))/2).toFixed(0) + "Hz"));
                         ul.appendChild(li);

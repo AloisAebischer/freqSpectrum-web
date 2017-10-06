@@ -31,7 +31,7 @@ void setup() {
 void loop() {
   while(1) { // reduces jitter
     int m = analogRead(0);
-    if(m > 525 || m < 475){
+    if(m > 515 || m < 485){
       for(int j=0; j<1; j++){
         //test1=millis();
         for (int i=0; i < SAMPLES; i++) { 
